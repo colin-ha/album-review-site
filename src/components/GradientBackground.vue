@@ -74,10 +74,11 @@ const gradientStyle = computed(() => {
 <style scoped>
 .gradient-background {
   position: relative;
-  width: 100vw;
+  width: 99vw;
   min-height: 100vh;
   overflow: hidden;
-  /* This lets it fill the entire background*/
+  /* This lets it fill the entire background
+  Kinda hacky though with 99vw but otherwise it was adding a horizontal scrollbar*/
 }
 
 .gradient-layer {

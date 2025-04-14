@@ -138,6 +138,7 @@ h1 {
   justify-content: center;
   margin: 3rem auto 15rem;
   padding: 0 2rem;
+  max-width: 90vw;
 }
 
 @media (max-width: 750px) {

@@ -59,14 +59,12 @@ const navigate = () => {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease-in-out;
-  height: auto;
   max-width: 350px;
 }
 
 .album-card.expanded {
   transform: scale(1.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  z-index: 10;
 }
 
 .album-cover {
