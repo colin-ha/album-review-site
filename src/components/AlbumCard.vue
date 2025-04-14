@@ -26,10 +26,9 @@ const handleMouseLeave = () => {
 
 const navigate = () => {
   const valid = ['running', 'floramaniia', 'submarine', 'beatopia']
-  if(valid.includes(props.album.id)){
+  if (valid.includes(props.album.id)) {
     router.push(`/album/${props.album.id}`)
-  }
-  else{
+  } else {
     router.push('/notwritten')
   }
 }

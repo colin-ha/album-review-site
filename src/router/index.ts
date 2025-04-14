@@ -13,14 +13,13 @@ const router = createRouter({
     {
       path: '/album/running',
       name: 'running',
-      component: () => import('../views/reviews/Running.vue')
+      component: () => import('../views/reviews/Running.vue'),
     },
     {
       path: '/notwritten',
       name: 'notwritten',
-      component: () => import('../views/NotWritten.vue')
-    }
-
+      component: () => import('../views/NotWritten.vue'),
+    },
   ],
 })
 

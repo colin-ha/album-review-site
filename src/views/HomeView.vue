@@ -10,7 +10,7 @@ const albums = ref([
     title: 'Running',
     artist: 'Cafuné',
     year: 2021,
-    coverPath: 'covers/running.jpg'
+    coverPath: 'covers/running.jpg',
   },
 
   {
@@ -18,28 +18,28 @@ const albums = ref([
     title: 'Flora Maniia',
     artist: 'Temachii',
     year: 2023,
-    coverPath: 'covers/flora-maniia.jpg'
+    coverPath: 'covers/flora-maniia.jpg',
   },
   {
     id: 'beatopia',
     title: 'Beatopia',
     artist: 'Beabadoobee',
     year: 2022,
-    coverPath: 'covers/beatopia.webp'
+    coverPath: 'covers/beatopia.webp',
   },
   {
     id: 'submarine',
     title: 'Submarine',
     artist: 'The Marías',
     year: 2024,
-    coverPath: 'covers/submarine.jpg'
+    coverPath: 'covers/submarine.jpg',
   },
   {
     id: 'dieformybitch',
     title: 'Die For My Bitch',
     artist: 'Baby Keem',
     year: 2019,
-    coverPath: 'covers/dieformybitch.png'
+    coverPath: 'covers/dieformybitch.png',
   },
 
   {
@@ -47,21 +47,21 @@ const albums = ref([
     title: 'Fables From A Mayfly: What I Tell You Three Times is True',
     artist: 'Fair To Midland',
     year: 2007,
-    coverPath: 'covers/fablesfromamayfly.jpg'
+    coverPath: 'covers/fablesfromamayfly.jpg',
   },
   {
     id: 'thefamemonster',
     title: 'The Fame Monster',
     artist: 'Lady Gaga',
     year: 2009,
-    coverPath: 'covers/thefamemonster.jpg'
+    coverPath: 'covers/thefamemonster.jpg',
   },
   {
     id: 'afever',
-    title: 'A Fever You Can\'t Sweat Out',
+    title: "A Fever You Can't Sweat Out",
     artist: 'Panic! At The Disco',
     year: 2005,
-    coverPath: 'covers/afever.jpg'
+    coverPath: 'covers/afever.jpg',
   },
 
   {
@@ -69,7 +69,7 @@ const albums = ref([
     title: 'Luv is Rage 2',
     artist: 'Lil Uzi Vert',
     year: 2017,
-    coverPath: 'covers/lir2.png'
+    coverPath: 'covers/lir2.png',
   },
 
   {
@@ -77,7 +77,7 @@ const albums = ref([
     title: 'Sweet Boy',
     artist: 'Malcolm Todd',
     year: 2024,
-    coverPath: 'covers/sweetboy.jpg'
+    coverPath: 'covers/sweetboy.jpg',
   },
 
   {
@@ -85,7 +85,7 @@ const albums = ref([
     title: 'TW2052',
     artist: 'KayCyy',
     year: 2023,
-    coverPath: 'covers/tw2052.png'
+    coverPath: 'covers/tw2052.png',
   },
 
   {
@@ -93,7 +93,7 @@ const albums = ref([
     title: 'Ocean Eyes',
     artist: 'Owl City',
     year: 2009,
-    coverPath: 'covers/oceaneyes.jpg'
+    coverPath: 'covers/oceaneyes.jpg',
   },
 ])
 </script>
@@ -104,17 +104,13 @@ const albums = ref([
       <div class="glass topInfo">
         <h1>Album Reviews</h1>
         <p>
-          These are some of my favorite albums of all time, and how each song made me feel. I
-          love sharing my favorite songs with others, and I hope you'll enjoy these as much as I did!
+          These are some of my favorite albums of all time, and how each song made me feel. I love
+          sharing my favorite songs with others, and I hope you'll enjoy these as much as I did!
         </p>
       </div>
 
       <div class="album-grid">
-        <AlbumCard
-          v-for="album in albums"
-          :key="album.id"
-          :album="album"
-        />
+        <AlbumCard v-for="album in albums" :key="album.id" :album="album" />
       </div>
     </main>
   </GradientBackground>
@@ -130,7 +126,7 @@ const albums = ref([
   text-align: center;
 }
 
-h1{
+h1 {
   font-weight: bolder;
   font-size: 32pt;
 }
