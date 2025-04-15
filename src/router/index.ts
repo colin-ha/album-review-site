@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import NotWritten from '@/views/NotWritten.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +12,7 @@ const router = createRouter({
     {
       path: '/album/running',
       name: 'running',
-      component: () => import('../views/reviews/Running.vue'),
+      component: () => import('../views/reviews/RunningReview.vue'),
     },
     {
       path: '/notwritten',

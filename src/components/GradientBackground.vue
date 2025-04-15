@@ -62,7 +62,7 @@ const gradientStyle = computed(() => {
     `radial-gradient(at 16% 71%, hsla(308,86%,72%,1) 0px, transparent 50%)`,
     `radial-gradient(at 91% 71%, hsla(300,79%,40%,1) 0px, transparent 50%)`,
     `radial-gradient(at 7% 18%, hsla(231,75%,73%,1) 0px, transparent 50%)`,
-  ].join(',') // Filter out empty strings
+  ].join(',')
 
   return {
     backgroundColor: '#99ccff',

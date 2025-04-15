@@ -46,7 +46,7 @@ const navigate = () => {
       <img :src="album.coverPath" :alt="album.title" />
     </div>
     <div class="album-info">
-      <h3>{{ album.title }}</h3>
+      <h2>{{ album.title }}</h2>
       <p class="artist">{{ album.artist }}</p>
       <p class="year">{{ album.year }}</p>
     </div>
@@ -91,7 +91,7 @@ const navigate = () => {
   padding: 1.5rem;
 }
 
-.album-info h3 {
+.album-info h2 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
