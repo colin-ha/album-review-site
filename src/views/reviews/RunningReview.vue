@@ -35,20 +35,27 @@ const tracks = ref([
     </div>
 
     <div class="double-display">
-      <div class="glass info">
-        <div class="album-info">
-          <img src="/covers/running.jpg" class="album-art" />
-          <div class="info-text">
-            <h1>Running</h1>
-            <h2>Cafuné</h2>
-            <h3>2022</h3>
-            <p>
-              In their debut album, pop duo Cafuné packs in catchy tunes and powerful lyrics on this
-              self-produced masterpiece. The instrumentals continue to evolve into new styles, and
-              their sound continues to change throughout the album. Becuase of this, every song is
-              uniquely personal and well put-together.
-            </p>
+      <div class="leftside">
+        <div class="glass info">
+          <div class="album-info">
+            <img src="/covers/running.jpg" class="album-art" />
+            <div class="info-text">
+              <h1>Running</h1>
+              <h2>Cafuné</h2>
+              <h3>2022</h3>
+              <p>
+                In their debut album, pop duo Cafuné packs in catchy tunes and powerful lyrics on this
+                self-produced masterpiece. The instrumentals continue to evolve into new styles, and
+                their sound continues to change throughout the album. Becuase of this, every song is
+                uniquely personal and well put-together. A great listen I'd recommend to most music
+                tastes.
+              </p>
+            </div>
           </div>
+        </div>
+        <div class="review glass">
+          <h1>Review</h1>
+          <p>Lorem ipsum dolor sit amet</p>
         </div>
       </div>
 
@@ -96,10 +103,21 @@ button:hover {
   z-index: 999;
 }
 
+.leftside{
+  flex: 0 1 auto;
+  width: 65%;
+}
+
 .info {
   margin: 20px;
   padding: 20px;
-  flex: 0 1 auto;
+  align-self: flex-start;
+}
+
+.review{
+  margin: 20px;
+  padding: 20px;
+  align-self: flex-start;
 }
 
 .info h1 {
@@ -118,10 +136,12 @@ button:hover {
   width: 20vw;
   border-radius: 5px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-height: 20vw; /* keep it 1-1 */
 }
 
 .album-info {
   display: flex;
+  align-items: flex-start;
 }
 
 .info-text {
@@ -132,13 +152,19 @@ button:hover {
   display: flex;
   flex-direction: row;
   margin-top: 100px;
+  align-items: flex-start;
 }
 
 .tracklist {
   margin: 20px;
   padding: 20px;
   flex: 1 0 auto;
-  min-width: 400px;
+  width: 30%;
+  position: fixed;
+  top: 100px;
+  right: 5px;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .tracks-container {
@@ -179,5 +205,36 @@ button:hover {
 
 .track-duration {
   opacity: 0.7;
+}
+
+@media (max-width: 1000px) {
+  /* hide tracklist */
+  .tracklist {
+    display: none;
+  }
+
+  .double-display {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .album-info {
+    flex-direction: column;
+  }
+
+  .album-art {
+    width: 100%;
+    max-height: none;
+  }
+
+  .info-text {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .info {
+    width: 95%;
+    box-sizing: border-box;
+  }
 }
 </style>
