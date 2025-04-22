@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const props = defineProps<{
@@ -25,7 +25,7 @@ const handleMouseLeave = () => {
 }
 
 const navigate = () => {
-  const valid = ['running', 'floramaniia', 'submarine', 'beatopia']
+  const valid = ['running'] // when i write more reviews, they get added here
   if (valid.includes(props.album.id)) {
     router.push(`/album/${props.album.id}`)
   } else {

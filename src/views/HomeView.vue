@@ -36,7 +36,7 @@ const albums = ref([
   },
   {
     id: 'dieformybitch',
-    title: 'Die For My Bitch',
+    title: 'Die For My B***h',
     artist: 'Baby Keem',
     year: 2019,
     coverPath: 'covers/dieformybitch.png',
