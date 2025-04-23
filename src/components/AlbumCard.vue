@@ -43,7 +43,7 @@ const navigate = () => {
     @click="navigate"
   >
     <div class="album-cover">
-      <img :src="album.coverPath" :alt="album.title" />
+      <img :src="album.coverPath" :alt="'Cover art for' + album.title" />
     </div>
     <div class="album-info">
       <h2>{{ album.title }}</h2>
