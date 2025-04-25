@@ -257,13 +257,14 @@ function onScroll() {
           </section>
         </div>
 
-        <section class="glass tracklist">
+        <section class="glass tracklist" tabindex="0">
           <h1>Tracklist</h1>
           <div class="tracks-container">
             <div
               v-for="track in tracks"
               :key="track.id"
               class="track"
+              tabindex="0"
               :class="{ 'track-highlighted': track.highlighted }"
             >
               <div class="track-number">{{ track.id }}</div>
