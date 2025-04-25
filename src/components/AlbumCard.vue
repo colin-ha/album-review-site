@@ -61,15 +61,17 @@ onUnmounted(() => {
 
 <template>
 
-  <!--    https://stackoverflow.com/questions/41601294/vue-js-value-tied-on-input-having-the-focus-->
+  <!--    https://stackoverflow.com/questions/41601294/vue-js-value-tied-on-input-having-the-focus  -->
   <div
     class="album-card"
     :class="{ expanded: (isExpanded || shouldAutoExpand || isFocused), glass: (isExpanded || shouldAutoExpand || isFocused) }"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @click="navigate"
+    @keydown.enter="navigate"
     @focus="isFocused = true"
     @blur="isFocused = false"
+    tabindex="0"
   >
     <div class="album-cover">
       <img :src="album.coverPath" :alt="'Cover art for' + album.title" />

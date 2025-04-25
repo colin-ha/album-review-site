@@ -110,7 +110,7 @@ const albums = ref([
       </section>
 
       <section class="album-grid">
-        <AlbumCard tabindex="0" v-for="album in albums" :key="album.id" :album="album" />
+        <AlbumCard v-for="album in albums" :key="album.id" :album="album" />
       </section>
     </main>
   </GradientBackground>

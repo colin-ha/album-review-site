@@ -62,8 +62,8 @@ function onScroll() {
 
 <template>
   <GradientBackground>
-    <div tabindex="0" class="glass backButton">
-      <button @click="goBack">Back to All Albums</button>
+    <div class="glass backButton">
+      <button tabindex="0" @click="goBack">Back to All Albums</button>
     </div>
 
     <main>
