@@ -101,17 +101,17 @@ const albums = ref([
 <template>
   <GradientBackground>
     <main>
-      <div class="glass topInfo">
+      <section class="glass topInfo">
         <h1>Album Reviews</h1>
         <p>
           These are some of my favorite albums of all time, and how each song made me feel. I love
           sharing my favorite songs with others, and I hope you'll enjoy these as much as I did!
         </p>
-      </div>
+      </section>
 
-      <div class="album-grid">
-        <AlbumCard v-for="album in albums" :key="album.id" :album="album" />
-      </div>
+      <section class="album-grid">
+        <AlbumCard tabindex="0" v-for="album in albums" :key="album.id" :album="album" />
+      </section>
     </main>
   </GradientBackground>
 </template>

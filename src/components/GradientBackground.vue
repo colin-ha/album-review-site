@@ -17,7 +17,7 @@ const mouseX = ref(50)
 const mouseY = ref(50)
 const prefersReducedMotion = ref(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
 
-// When the mouse moves, we update the location in percentage
+// when the mouse moves,  update the location and make it percentage
 const handleMouseMove = (event: MouseEvent) => {
   if (!prefersReducedMotion.value) {
     mouseX.value = (event.clientX / window.innerWidth) * 100
@@ -26,6 +26,7 @@ const handleMouseMove = (event: MouseEvent) => {
 }
 
 // if they have prefers reduced motion on we hide this
+// I guess it might change, so we should account for that with a listener
 const handleReducedMotionChange = (event: MediaQueryListEvent) => {
   prefersReducedMotion.value = event.matches
 }

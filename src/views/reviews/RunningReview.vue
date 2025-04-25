@@ -62,14 +62,14 @@ function onScroll() {
 
 <template>
   <GradientBackground>
-    <div class="glass backButton">
+    <div tabindex="0" class="glass backButton">
       <button @click="goBack">Back to All Albums</button>
     </div>
 
     <main>
       <div class="double-display">
         <div class="leftside">
-          <div class="glass info">
+          <section class="glass info">
             <div class="album-info">
               <img src="/covers/running.jpg" class="album-art" alt="Cover art for Running" />
               <div class="info-text">
@@ -85,8 +85,8 @@ function onScroll() {
                 </p>
               </div>
             </div>
-          </div>
-          <div class="review glass">
+          </section>
+          <section class="review glass">
             <h1>Cafuné's "Running" - An Adventure through Love, Longing, and Memory</h1>
             <p>
               <i>Running</i> sounds just like its name. It constantly moves, it grows, and develops,
@@ -254,10 +254,10 @@ function onScroll() {
               the duo’s talent is very apparent. It’s clear that they have what it takes, and I
               can’t wait to see what they’ll come up with next.
             </p>
-          </div>
+          </section>
         </div>
 
-        <div class="glass tracklist">
+        <section class="glass tracklist">
           <h1>Tracklist</h1>
           <div class="tracks-container">
             <div
@@ -271,7 +271,7 @@ function onScroll() {
               <div class="track-duration">{{ track.duration }}</div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   </GradientBackground>

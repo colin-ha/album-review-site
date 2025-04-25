@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const props = defineProps<{
@@ -15,6 +15,8 @@ const props = defineProps<{
 const router = useRouter()
 
 const isExpanded = ref(false)
+const shouldAutoExpand = ref(false)
+const isFocused = ref(false)
 
 const handleMouseEnter = () => {
   isExpanded.value = true
@@ -32,15 +34,42 @@ const navigate = () => {
     router.push('/notwritten')
   }
 }
+
+// should we keep things expanded or not
+const checkAutoExpand = () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  shouldAutoExpand.value = window.innerWidth < 750 || prefersReducedMotion
+}
+
+// this part is for the expansion functionality, this should stay expanded in the
+// cases of screen being too wide or if prefers-reduced-motion is on reduce
+onMounted(() => {
+  checkAutoExpand()
+  window.addEventListener('resize', checkAutoExpand)
+
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotionQuery.addEventListener('change', checkAutoExpand)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkAutoExpand)
+
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotionQuery.removeEventListener('change', checkAutoExpand)
+})
 </script>
 
 <template>
+
+  <!--    https://stackoverflow.com/questions/41601294/vue-js-value-tied-on-input-having-the-focus-->
   <div
     class="album-card"
-    :class="{ expanded: isExpanded, glass: isExpanded }"
+    :class="{ expanded: (isExpanded || shouldAutoExpand || isFocused), glass: (isExpanded || shouldAutoExpand || isFocused) }"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @click="navigate"
+    @focus="isFocused = true"
+    @blur="isFocused = false"
   >
     <div class="album-cover">
       <img :src="album.coverPath" :alt="'Cover art for' + album.title" />
@@ -104,5 +133,11 @@ const navigate = () => {
 
 .year {
   font-size: 0.9rem;
+}
+
+@media (max-width: 1500px) {
+  .album-card {
+    margin-bottom: 40px;
+  }
 }
 </style>
